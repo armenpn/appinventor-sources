@@ -10,7 +10,8 @@ import sys
 import mmap
 from getopt import getopt, GetoptError
 
-BOM = '\xef\xbb\xbf'                    # BOM for UTF-8
+# fixed by Angus the old is:BOM = '\xef\xbb\xbf' 
+BOM = b'\xef\xbb\xbf'                    # BOM for UTF-8
 
 def main():
     filename = sys.argv[1]
@@ -19,7 +20,7 @@ def main():
     if header == BOM:
         return                          # Nothing to do, BOM already present
     l = os.lseek(fd, 0, 2)
-    os.write(fd, '\x00\x00\x00')
+    os.write(fd, b'\x00\x00\x00')  # fixed by Angus the old is:os.write(fd, '\x00\x00\x00') 
     v = mmap.mmap(fd, l + 3, access=mmap.ACCESS_WRITE)
     v[3:] = v[0:-3]                     # Shift
     v[0:3] = BOM
