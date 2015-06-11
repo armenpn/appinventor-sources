@@ -5,13 +5,15 @@
 // http://www.apache.org/licenses/LICENSE-2.0
 package com.google.appinventor.components.runtime.util;
 
+import com.google.appinventor.components.runtime.EntityGrid;
+import com.google.appinventor.components.runtime.GridView;
+import com.google.appinventor.components.runtime.ChartView;
 import com.google.appinventor.components.runtime.WebViewer;
 
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
-
 import android.view.MotionEvent;
 import android.view.View;
 import android.webkit.GeolocationPermissions;
@@ -86,6 +88,134 @@ public class EclairUtil {
       });
   }
 
+  //========= Jeffrey Extend ===============
+  /**
+   * Setup Dialog Box to request location permission from end-user for the Javascript
+   * location (navigator.geolocation.getCurrentLocation()) API.
+   *
+   * @param webview - The WebView component running the Javascript engine that needs permission
+   * @param activity - Its containing activity used for placing the dialog box
+   */
+
+  public static void setupWebViewGeoLoc(final EntityGrid caller, WebView webview, final Activity activity) {
+    webview.getSettings().setGeolocationDatabasePath(activity.getFilesDir().getAbsolutePath());
+    webview.getSettings().setDatabaseEnabled(true);
+    webview.setWebChromeClient(new WebChromeClient() {
+        @Override
+        public void onGeolocationPermissionsShowPrompt(String origin,
+          Callback callback) {
+          final Callback theCallback = callback;
+          final String theOrigin = origin;
+          if (!caller.PromptforPermission()) { // Don't prompt, assume permission
+            callback.invoke(origin, true, true);
+            return;
+          }
+          AlertDialog alertDialog = new AlertDialog.Builder(activity).create();
+          alertDialog.setTitle("Permission Request");
+          if (origin.equals("file://"))
+            origin = "This Application";
+          alertDialog.setMessage(origin + " would like to access your location.");
+          alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, "Allow",
+            new DialogInterface.OnClickListener() {
+              public void onClick(DialogInterface dialog, int which) {
+                theCallback.invoke(theOrigin, true, true);
+              }
+            });
+          alertDialog.setButton(AlertDialog.BUTTON_NEGATIVE, "Refuse",
+            new DialogInterface.OnClickListener() {
+              public void onClick(DialogInterface dialog, int which) {
+                theCallback.invoke(theOrigin, false, true);
+              }
+            });
+          alertDialog.show();
+        }
+      });
+  }
+  
+  public static void setupWebViewGeoLoc(final GridView caller, WebView webview, final Activity activity) {
+    // TODO Auto-generated method stub
+    webview.getSettings().setGeolocationDatabasePath(activity.getFilesDir().getAbsolutePath());
+    webview.getSettings().setDatabaseEnabled(true);
+    webview.setWebChromeClient(new WebChromeClient() {
+        @Override
+        public void onGeolocationPermissionsShowPrompt(String origin,
+          Callback callback) {
+          final Callback theCallback = callback;
+          final String theOrigin = origin;
+          if (!caller.PromptforPermission()) { // Don't prompt, assume permission
+            callback.invoke(origin, true, true);
+            return;
+          }
+          AlertDialog alertDialog = new AlertDialog.Builder(activity).create();
+          alertDialog.setTitle("Permission Request");
+          if (origin.equals("file://"))
+            origin = "This Application";
+          alertDialog.setMessage(origin + " would like to access your location.");
+          alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, "Allow",
+            new DialogInterface.OnClickListener() {
+              public void onClick(DialogInterface dialog, int which) {
+                theCallback.invoke(theOrigin, true, true);
+              }
+            });
+          alertDialog.setButton(AlertDialog.BUTTON_NEGATIVE, "Refuse",
+            new DialogInterface.OnClickListener() {
+              public void onClick(DialogInterface dialog, int which) {
+                theCallback.invoke(theOrigin, false, true);
+              }
+            });
+          alertDialog.show();
+        }
+      });
+  }
+  
+  //=========End Jeffrey Extend ===============
+
+  //=========  Begin Angus Extend ===============
+  /**
+   * Setup Dialog Box to request location permission from end-user for the Javascript
+   * location (navigator.geolocation.getCurrentLocation()) API.
+   *
+   * @param webview - The WebView component running the Javascript engine that needs permission
+   * @param activity - Its containing activity used for placing the dialog box
+   */  
+  public static void setupWebViewGeoLoc(final ChartView caller, WebView webview, final Activity activity) {
+    // TODO Auto-generated method stub
+    webview.getSettings().setGeolocationDatabasePath(activity.getFilesDir().getAbsolutePath());
+    webview.getSettings().setDatabaseEnabled(true);
+    webview.setWebChromeClient(new WebChromeClient() {
+        @Override
+        public void onGeolocationPermissionsShowPrompt(String origin,
+          Callback callback) {
+          final Callback theCallback = callback;
+          final String theOrigin = origin;
+          if (!caller.PromptforPermission()) { // Don't prompt, assume permission
+            callback.invoke(origin, true, true);
+            return;
+          }
+          AlertDialog alertDialog = new AlertDialog.Builder(activity).create();
+          alertDialog.setTitle("Permission Request");
+          if (origin.equals("file://"))
+            origin = "This Application";
+          alertDialog.setMessage(origin + " would like to access your location.");
+          alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, "Allow",
+            new DialogInterface.OnClickListener() {
+              public void onClick(DialogInterface dialog, int which) {
+                theCallback.invoke(theOrigin, true, true);
+              }
+            });
+          alertDialog.setButton(AlertDialog.BUTTON_NEGATIVE, "Refuse",
+            new DialogInterface.OnClickListener() {
+              public void onClick(DialogInterface dialog, int which) {
+                theCallback.invoke(theOrigin, false, true);
+              }
+            });
+          alertDialog.show();
+        }
+      });
+  }
+  
+  //=========  End Angus Extend ===============
+  
   /**
    * Clear Stored Location permissions. When the geolocation API is used in
    * the WebViewer, the end user is prompted on a per URL basis for whether
@@ -103,5 +233,7 @@ public class EclairUtil {
   public static String getInstallerPackageName(String pname, Activity form) {
     return form.getPackageManager().getInstallerPackageName(pname);
   }
+
+
 
 }
