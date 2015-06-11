@@ -7,6 +7,8 @@
 package com.google.appinventor.client;
 
 import com.google.gwt.i18n.client.Messages;
+import com.google.gwt.i18n.client.LocalizableResource.Description;
+import com.google.gwt.i18n.client.Messages.DefaultMessage;
 
 /**
  * I18n strings for {@link Ode}.
@@ -2693,6 +2695,80 @@ public interface OdeMessages extends Messages {
   @DefaultMessage("Url")
   @Description("")
   String UrlProperties();
+  
+  // Jeffrey Extend
+  @DefaultMessage("WSHost")
+  @Description("")
+  String WSHostProperties();
+  
+  @DefaultMessage("QueryHost")
+  @Description("")
+  String QueryHostProperties();
+  
+  @DefaultMessage("QueryDate")
+  @Description("")
+  String QueryDateProperties();
+  
+  @DefaultMessage("HtmlString")
+  @Description("")
+  String HtmlStringProperties();
+  
+  @DefaultMessage("Deduplication")
+  @Description("")
+  String DeduplicationProperties();
+  
+  @DefaultMessage("Topic")
+  @Description("")
+  String TopicProperties();
+  
+  @DefaultMessage("Status")
+  @Description("")
+  String StatusProperties();
+  
+  @DefaultMessage("StatusPolarity")
+  @Description("")
+  String StatusPolarityProperties();
+  
+  @DefaultMessage("DataPath")
+  @Description("")
+  String DataPathProperties();
+  
+  //End Jeffrey Extend
+  
+  // Angus Extend
+  @DefaultMessage("ChartBottom")
+  @Description("")
+  String ChartBottomProperties();
+  
+  @DefaultMessage("ChartLeft")
+  @Description("")
+  String ChartLeftProperties();
+  
+  @DefaultMessage("ChartRight")
+  @Description("")
+  String ChartRightProperties();
+  
+  @DefaultMessage("ChartTop")
+  @Description("")
+  String ChartTopProperties();
+  
+//  @DefaultMessage("Height")
+//  @Description("")
+//  String HeightProperties();
+//  
+//  @DefaultMessage("PromptforPermission")
+//  @Description("")
+//  String PromptforPermissionProperties();
+//  
+//  @DefaultMessage("Visible")
+//  @Description("")
+//  String VisibleProperties();
+//  
+//  @DefaultMessage("Width")
+//  @Description("")
+//  String WidthProperties();
+  
+  //End Angus Extend
 
   @DefaultMessage("UseFront")
   @Description("")
@@ -3614,6 +3690,38 @@ public interface OdeMessages extends Messages {
   @DefaultMessage("url")
   @Description("")
   String urlParams();
+  
+  //Jeffrey Extend
+  
+  @DefaultMessage("wsHost")
+  @Description("")
+  String wsHostParams();
+  
+  @DefaultMessage("queryHost")
+  @Description("")
+  String queryHostParams();
+  
+  @DefaultMessage("queryDate")
+  @Description("")
+  String queryDateParams();
+  
+  @DefaultMessage("deduplication")
+  @Description("")
+  String deduplicationParams();
+  
+  @DefaultMessage("topic")
+  @Description("")
+  String topicParams();
+  
+  @DefaultMessage("statusPolarity")
+  @Description("")
+  String statusPolarityParams();
+  
+  @DefaultMessage("dataPath")
+  @Description("")
+  String dataPathParams();
+  
+  //End Jeffrey Extend
 
   @DefaultMessage("responseCode")
   @Description("")
@@ -4079,6 +4187,13 @@ public interface OdeMessages extends Messages {
   @DefaultMessage("Shaking")
   @Description("")
   String ShakingEvents();
+  
+  // Angus Extend
+  // Add by Angus for Jeffrey
+  @DefaultMessage("GotEvent")
+  @Description("")
+  String GotEventEvents();
+  // End Angus Extend
 
   //Methods
   @DefaultMessage("ResolveActivity")
@@ -4904,8 +5019,70 @@ public interface OdeMessages extends Messages {
   @DefaultMessage("RequestTranslation")
   @Description("")
   String RequestTranslationMethods();
+  
+  // Angus Extend
+  @DefaultMessage("ReSize")
+  @Description("")
+  String ReSizeMethods();
 
+  @DefaultMessage("Refresh")
+  @Description("")
+  String RefreshMethods();
 
+  //the follow add by Angus for Jeffrey
+  @DefaultMessage("MapEntityField")
+  @Description("")
+  String MapEntityFieldMethods();
+  
+  @DefaultMessage("MapDataToColumn")
+  @Description("")
+  String MapDataToColumnMethods();
+  
+  @DefaultMessage("ResetDataColumnMapping")
+  @Description("")
+  String ResetDataColumnMappingMethods();
+  
+  @DefaultMessage("GetStatus")
+  @Description("")
+  String GetStatusMethods();
+  
+  @DefaultMessage("GetStatusPolarity")
+  @Description("")
+  String GetStatusPolarityMethods();
+  
+  @DefaultMessage("GetLog")
+  @Description("")
+  String GetLogMethods();
+  
+  @DefaultMessage("GetLogPolarity")
+  @Description("")
+  String GetLogPolarityMethods();
+  
+  @DefaultMessage("getDailyAmountFieldName")
+  @Description("")
+  String getDailyAmountFieldNameMethods();
+  
+  @DefaultMessage("getDailyPiecesFieldName")
+  @Description("")
+  String getDailyPiecesFieldNameMethods();
+  
+  @DefaultMessage("getJsonText")
+  @Description("")
+  String getJsonTextMethods();
+  
+  @DefaultMessage("getMonthlyAmountFieldName")
+  @Description("")
+  String getMonthlyAmountFieldNameMethods();
+  
+  @DefaultMessage("getMonthlyPiecesFieldName")
+  @Description("")
+  String getMonthlyPiecesFieldNameMethods();
+  
+  @DefaultMessage("getStoreIdFieldName")
+  @Description("")
+  String getStoreIdFieldNameMethods();
+  // End Angus Extend
+ 
   //Mock Components
   @DefaultMessage("add items...")
   @Description("")

@@ -491,4 +491,56 @@ public interface Images extends Resources {
   @Source("com/google/appinventor/images/proximitysensor.png")
   ImageResource proximitysensor();
 
+  //------Extended by Jeffrey -----------
+  /**
+   * Designer palette item: onlineTransSummary component
+   */
+  @Source("com/google/appinventor/images/onlineTransSummary.png")
+  ImageResource onlineTransSummary();
+  
+  /**
+   * Designer palette item: Pye Logo
+   */
+  @Source("com/google/appinventor/images/pye.png")
+  ImageResource pye();
+  
+  /**
+   * Designer palette item: EntityGrid component
+   */
+  @Source("com/google/appinventor/images/entitygrid.png")
+  ImageResource entitygrid();
+  
+  /**
+   * Designer palette item: EntityGrid mock icon
+   */
+  @Source("com/google/appinventor/images/entitygridbig.png")
+  ImageResource entitygridbig();
+  
+  /**
+   * Designer palette item: RequestReply icon
+   */
+  @Source("com/google/appinventor/images/request.png")
+  ImageResource request();
+  
+  /**
+   * Designer palette item: PublishSubscribe icon
+   */
+  @Source("com/google/appinventor/images/publish.png")
+  ImageResource publish();
+  
+  //---------End Extended by Jeffrey
+
+  //------ Begin Extended by Angus -----------
+  /**
+   * Designer palette item: Chart mock icon
+   */
+  @Source("com/google/appinventor/images/chartbig.png")
+  ImageResource chartbig();
+  
+  /**
+   * Designer palette item: Chart component
+   */
+  @Source("com/google/appinventor/images/chart.png")
+  ImageResource chart();  
+  //---------  End Extended by Angus
 }

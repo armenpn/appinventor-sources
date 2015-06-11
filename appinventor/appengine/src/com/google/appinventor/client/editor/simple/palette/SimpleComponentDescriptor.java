@@ -13,11 +13,14 @@ import com.google.appinventor.client.editor.simple.SimpleEditor;
 import com.google.appinventor.client.editor.simple.components.MockBall;
 import com.google.appinventor.client.editor.simple.components.MockButton;
 import com.google.appinventor.client.editor.simple.components.MockCanvas;
+import com.google.appinventor.client.editor.simple.components.MockChartView;
 import com.google.appinventor.client.editor.simple.components.MockCheckBox;
 import com.google.appinventor.client.editor.simple.components.MockComponent;
 import com.google.appinventor.client.editor.simple.components.MockContactPicker;
 import com.google.appinventor.client.editor.simple.components.MockDatePicker;
 import com.google.appinventor.client.editor.simple.components.MockEmailPicker;
+import com.google.appinventor.client.editor.simple.components.MockEntityGrid;
+import com.google.appinventor.client.editor.simple.components.MockGridView;
 import com.google.appinventor.client.editor.simple.components.MockHorizontalArrangement;
 import com.google.appinventor.client.editor.simple.components.MockImage;
 import com.google.appinventor.client.editor.simple.components.MockImagePicker;
@@ -122,6 +125,19 @@ public final class SimpleComponentDescriptor {
     bundledImages.put("images/listView.png", images.listview());
     bundledImages.put("images/yandex.png", images.yandex());
     bundledImages.put("images/proximitysensor.png", images.proximitysensor());
+    
+    //Added for Jeffrey Extension
+    bundledImages.put("images/onlineTransSummary.png", images.onlineTransSummary());
+    bundledImages.put("images/entitygrid.png", images.entitygrid());
+    bundledImages.put("images/pye.png", images.pye());
+    bundledImages.put("images/request.png", images.request());
+    bundledImages.put("images/publish.png", images.publish());
+    //End
+    
+    //begin Added for Angus Extension
+    bundledImages.put("images/chart.png", images.chart());
+    //bundledImages.put("images/chartbig.png", images.chartbig());
+    //End Added for Angus Extension
     imagesInitialized = true;
   }
 
@@ -309,6 +325,15 @@ public final class SimpleComponentDescriptor {
       return new MockWebViewer(editor);
     } else if (name.equals(MockSpinner.TYPE)) {
       return new MockSpinner(editor);
+    } else if (name.equals(MockEntityGrid.TYPE)) {
+      //Extended by Jeffrey
+      return new MockEntityGrid(editor);
+    } else if (name.equals(MockGridView.TYPE)) {
+      //Extended by Jeffrey
+      return new MockGridView(editor);
+    } else if (name.equals(MockChartView.TYPE)) {
+      //Extended by Angus
+      return new MockChartView(editor);
     } else {
       // TODO(user): add 3rd party mock component proxy here
       throw new UnsupportedOperationException("unknown component: " + name);

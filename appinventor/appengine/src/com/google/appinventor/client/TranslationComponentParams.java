@@ -192,6 +192,15 @@ public class TranslationComponentParams {
     map.put("translation", MESSAGES.translationParams());
     map.put("languageToTranslateTo", MESSAGES.languageToTranslateToParams());
     map.put("textToTranslate", MESSAGES.textToTranslateParams());
+    //Jeffrey Extend
+    map.put("wsHost", MESSAGES.wsHostParams());
+    map.put("queryHost", MESSAGES.queryHostParams());
+    map.put("queryDate", MESSAGES.queryDateParams());
+    map.put("deduplication", MESSAGES.deduplicationParams());
+    map.put("topic", MESSAGES.topicParams());
+    map.put("statusPolarity", MESSAGES.statusPolarityParams());
+    map.put("dataPath", MESSAGES.dataPathParams());
+    //End Jeffrey Extend
     return map;
   }
 }
