@@ -83,6 +83,11 @@
     <copy toFile="${classes.files.dir}/android.jar" file="${lib.dir}/android/4.2.2/android.jar" />
     <copy toFile="${classes.files.dir}/dx.jar" file="${lib.dir}/android/tools/dx.jar" />
     <copy toFile="${classes.files.dir}/CommonVersion.jar" file="${build.dir}/common/CommonVersion.jar" />
+	<!-- Tibco WebMessaging Library by Jeffrey Mak -->
+	<copy toFile="${classes.files.dir}/wm-client.jar" file="${lib.dir}/wm/com.kaazing.gateway.client.android.jar" />
+	<copy toFile="${classes.files.dir}/wm-jms-client.jar" file="${lib.dir}/wm/com.kaazing.gateway.jms.client.android.jar" />
+    <copy toFile="${classes.files.dir}/wm-geronimo-jms.jar" file="${lib.dir}/wm/geronimo-jms_1.1_spec.jar" />
+    <copy toFile="${classes.files.dir}/wm-support.jar" file="${lib.dir}/wm/support-v4.jar" />
 
     <property name="classes.tools.dir" location="${BuildServer-class.dir}/tools" />
     <copy todir="${classes.tools.dir}">
