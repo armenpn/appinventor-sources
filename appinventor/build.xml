@@ -134,6 +134,11 @@
         <pathelement location="lib/appengine/appengine-java-sdk-1.9.17/lib/user/orm/geronimo-jpa_3.0_spec-1.1.1.jar"/>
         <!-- prevent error importing GitBuildId if it has been generated -->
         <pathelement location="common/build/classes/CommonVersion" />
+		<!-- Tibco WebMessaging Library by Jeffrey Mak -->
+		<pathelement location="lib/wm/com.kaazing.gateway.client.android.jar"/>
+        <pathelement location="lib/wm/com.kaazing.gateway.jms.client.android.jar"/>
+        <pathelement location="lib/wm/geronimo-jms_1.1_spec.jar"/>
+		<pathelement location="lib/wm/support-v4.jar"/>
       </classpath>
       <!-- TODO(opensource) - Add more <link> elements that correspond to the jars on the
            classpath above,so our javadoc will link appropriate online javadoc for libraries we
